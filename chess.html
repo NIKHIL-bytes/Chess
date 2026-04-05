@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Chess</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- MENU -->
+<div id="menu">
+  <div class="crown">♔</div>
+  <div class="logo"> Chess </div>
+  <div class="logo-sub">The Noble Game</div>
+  <div class="menu-btns">
+    <button class="menu-btn" onclick="startGame('2p')">⚔ Two Players</button>
+    <button class="menu-btn" onclick="startGame('bot')">🤖 Play vs Bot</button>
+  </div>
+</div>
+
+<!-- GAME -->
+<div id="game">
+  <!-- LEFT -->
+  <div class="side-panel">
+    <div class="player-card" id="card-black">
+      <div class="player-name">⬛ BLACK</div>
+      <div class="player-score" id="score-black">0</div>
+      <div class="player-pieces" id="captured-by-black"></div>
+    </div>
+    <div class="status-box">
+      <div class="status-label">STATUS</div>
+      <div class="status-value" id="status-text">White's Turn</div>
+    </div>
+    <div class="status-box">
+      <div class="status-label">CHECK COUNT</div>
+      <div class="status-value" id="check-count-display">—</div>
+    </div>
+    <div class="side-btns">
+      <button class="side-btn btn-reset" onclick="resetGame()">↺ Reset</button>
+      <button class="side-btn btn-exit"  onclick="exitToMenu()">✕ Exit</button>
+    </div>
+  </div>
+
+  <!-- BOARD -->
+  <div class="board-area">
+    <div class="mode-badge" id="mode-label">2 Player</div>
+    <div class="board-wrapper">
+      <div class="board-outer">
+        <div class="file-labels-row" id="file-top"></div>
+        <div id="board-rows"></div>
+        <div class="file-labels-row" id="file-bot"></div>
+      </div>
+    </div>
+    <div class="turn-bar" id="turn-bar">♔ White to move</div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right-panel">
+    <div class="player-card" id="card-white">
+      <div class="player-name">⬜ WHITE</div>
+      <div class="player-score" id="score-white">0</div>
+      <div class="player-pieces" id="captured-by-white"></div>
+    </div>
+    <div class="move-log-box">
+      <div class="move-log-title">MOVE LOG</div>
+      <div class="move-log" id="move-log"></div>
+    </div>
+  </div>
+</div>
+
+<!-- PROMOTION MODAL -->
+<div id="promotion-modal">
+  <div class="promo-box">
+    <div class="promo-title">PAWN PROMOTION</div>
+    <div class="promo-pieces" id="promo-pieces"></div>
+  </div>
+</div>
+
+<!-- WIN OVERLAY -->
+<div id="win-overlay">
+  <div class="confetti-container" id="confetti-container"></div>
+  <div class="win-banner">
+    <div class="win-crown">👑</div>
+    <div class="win-title" id="win-title">WHITE WINS!</div>
+    <div class="win-subtitle" id="win-subtitle">CHECKMATE</div>
+    <div class="win-scores">
+      <div class="win-score-card">
+        <div class="win-score-label">WHITE SCORE</div>
+        <div class="win-score-val" id="win-score-white">0</div>
+      </div>
+      <div class="win-score-card">
+        <div class="win-score-label">BLACK SCORE</div>
+        <div class="win-score-val" id="win-score-black">0</div>
+      </div>
+    </div>
+    <div class="win-actions">
+      <button class="win-btn win-btn-reset" onclick="resetGame()">↺ Play Again</button>
+      <button class="win-btn win-btn-exit"  onclick="exitToMenu()">✕ Exit</button>
+    </div>
+    <div class="countdown" id="win-countdown">Auto-closing in 10s…</div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
