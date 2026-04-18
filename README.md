@@ -15,6 +15,8 @@ Sometimes the best projects are the unplanned ones.
 
 This one was simply created for fun, but it turned out to be something I genuinely loved building.
 
+**https://nikhil-bytes.github.io/Chess/**
+
 ---
 
 Made with creativity, boredom, and good company.
